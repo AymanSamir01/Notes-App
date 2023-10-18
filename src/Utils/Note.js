@@ -158,3 +158,33 @@ async function sendUpdatedDataToApi({ id, title, content, token, updater }) {
     });
   }
 }
+// show password
+export function togglePasswordVisibility() {
+  const passwordInput = document.getElementById("password-input");
+  const eyeIcon = document.querySelector(".eyeIcon");
+
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    eyeIcon.classList.replace("fa-eye-slash", "fa-eye");
+  } else {
+    passwordInput.type = "password";
+    eyeIcon.classList.replace("fa-eye", "fa-eye-slash");
+  }
+}
+
+// Read More & Read Less
+export function readMore(index) {
+  var dots = document.querySelectorAll(".dots");
+  var moreText = document.querySelectorAll(".more");
+  var btnText = document.querySelectorAll(".myBtn");
+
+  if (dots[index].style.display === "none") {
+    dots[index].style.display = "inline";
+    btnText[index].innerHTML = "Read more ...";
+    moreText[index].classList.add("d-none");
+  } else {
+    dots[index].style.display = "none";
+    btnText[index].innerHTML = "Read less";
+    moreText[index].classList.replace("d-none", "d-inline");
+  }
+}

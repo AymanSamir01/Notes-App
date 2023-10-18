@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { togglePasswordVisibility } from "../../Utils/Note";
 
 export default function Register() {
   const [error, setError] = useState("");
@@ -153,14 +154,21 @@ export default function Register() {
                 ) : (
                   ""
                 )}
-                <input
-                  type="password"
-                  className="form-control mt-3"
-                  placeholder="Enter Password"
-                  name="password"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                />
+                <div className="position-relative">
+                  <input
+                    id="password-input"
+                    type="password"
+                    className="form-control mt-3"
+                    placeholder="Enter Password"
+                    name="password"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  />
+                  <i
+                    onClick={() => togglePasswordVisibility()}
+                    className="fa-regular fa-eye-slash eyeIcon"
+                  ></i>
+                </div>
                 {formik.errors.password && formik.touched.password ? (
                   <p className="fs-small ps-1 text-danger text-start">
                     {formik.errors.password}

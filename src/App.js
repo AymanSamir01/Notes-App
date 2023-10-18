@@ -9,6 +9,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NoteContextProvider from "./Context/NoteContext";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
+import Search from "./Components/Search/Search";
 
 const routes = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const routes = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
       },
     ],
   },

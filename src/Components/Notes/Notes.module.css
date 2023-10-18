@@ -10,4 +10,11 @@
 .noteFooter{
     padding: 5px 10px;
     background-color: rgb(33, 37, 41, 0.05) !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.more {
+    display: none;
 }
